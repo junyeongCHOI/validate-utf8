@@ -25,7 +25,7 @@ const reader = new FileReader();
 reader.onload = function (event: ProgressEvent<FileReader>) {
   // Example buffer (could be from file read, network, etc.)
   const buffer = new Uint8Array(event.target!.result as ArrayBuffer);
-  const isValid = Valid8.is(buffer);
+  const isValid = ValidateUTF8.is(buffer);
 };
 reader.readAsArrayBuffer(file);
 ```
